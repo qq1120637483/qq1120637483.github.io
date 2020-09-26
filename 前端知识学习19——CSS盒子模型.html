@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="1.盒子模型的组成1内容 + padding + border + margin  2.边框边框的组成1边框宽度 + 边框样式 + 边框颜色  边框样式 solid 实线 dashed 虚线 dotted 点线边框简写1border: 5px solid red 细线边框12border-collapse: collapse&lt;!-- 让两个边框之间的线变细，这个必须在table标签中使用 -">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端知识学习19——CSS盒子模型">
+<meta property="og:url" content="http://yoursite.com/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A019%E2%80%94%E2%80%94CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B.html">
+<meta property="og:site_name" content="Faith&amp;Passion">
+<meta property="og:description" content="1.盒子模型的组成1内容 + padding + border + margin  2.边框边框的组成1边框宽度 + 边框样式 + 边框颜色  边框样式 solid 实线 dashed 虚线 dotted 点线边框简写1border: 5px solid red 细线边框12border-collapse: collapse&lt;!-- 让两个边框之间的线变细，这个必须在table标签中使用 -">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200530185501.png">
+<meta property="og:image" content="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200530185637.png">
+<meta property="og:image" content="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200530185927.png">
+<meta property="og:image" content="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200530190004.png">
+<meta property="og:image" content="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200530190010.png">
+<meta property="og:image" content="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200530190159.png">
+<meta property="og:image" content="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200530190345.png">
+<meta property="og:image" content="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200530190432.png">
+<meta property="og:image" content="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200530190443.png">
+<meta property="og:image" content="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200530190524.png">
+<meta property="og:image" content="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200530190643.png">
+<meta property="og:image" content="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200530190707.png">
+<meta property="og:image" content="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200530190902.png">
+<meta property="og:image" content="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200530190952.png">
+<meta property="og:image" content="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200530191101.png">
+<meta property="article:published_time" content="2020-05-30T10:53:42.549Z">
+<meta property="article:modified_time" content="2020-09-01T09:15:18.135Z">
+<meta property="article:author" content="Justin">
+<meta property="article:tag" content="前端">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200530185501.png">
+
+<link rel="canonical" href="http://yoursite.com/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A019%E2%80%94%E2%80%94CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>前端知识学习19——CSS盒子模型 | Faith&Passion</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Faith&Passion</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Justin</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>文章索引</a>
+
+  </li>
+        <li class="menu-item menu-item-photos">
+
+    <a href="/photos" rel="section"><i class="fas fa-camera-retro fa-fw"></i>相册</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A019%E2%80%94%E2%80%94CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Xidian_logo.png">
+      <meta itemprop="name" content="Justin">
+      <meta itemprop="description" content="生活与代码记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Faith&Passion">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          前端知识学习19——CSS盒子模型
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-30 18:53:42" itemprop="dateCreated datePublished" datetime="2020-05-30T18:53:42+08:00">2020-05-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-01 17:15:18" itemprop="dateModified" datetime="2020-09-01T17:15:18+08:00">2020-09-01</time>
+              </span>
+
+          
+            <span id="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A019%E2%80%94%E2%80%94CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B.html" class="post-meta-item leancloud_visitors" data-flag-title="前端知识学习19——CSS盒子模型" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A019%E2%80%94%E2%80%94CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A019%E2%80%94%E2%80%94CSS%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="1-盒子模型的组成"><a href="#1-盒子模型的组成" class="headerlink" title="1.盒子模型的组成"></a>1.盒子模型的组成</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">内容 + padding + border + margin</span><br></pre></td></tr></table></figure>
+<p><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200530185501.png" alt=""></p>
+<h2 id="2-边框"><a href="#2-边框" class="headerlink" title="2.边框"></a>2.边框</h2><h3 id="边框的组成"><a href="#边框的组成" class="headerlink" title="边框的组成"></a>边框的组成</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">边框宽度 + 边框样式 + 边框颜色</span><br></pre></td></tr></table></figure>
+<p><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200530185637.png" alt=""></p>
+<h3 id="边框样式"><a href="#边框样式" class="headerlink" title="边框样式"></a>边框样式</h3><ul>
+<li>solid 实线</li>
+<li>dashed 虚线</li>
+<li>dotted 点线<h3 id="边框简写"><a href="#边框简写" class="headerlink" title="边框简写"></a>边框简写</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">border: 5px solid red</span><br></pre></td></tr></table></figure>
+<h3 id="细线边框"><a href="#细线边框" class="headerlink" title="细线边框"></a>细线边框</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">border-collapse: collapse</span><br><span class="line">&lt;!-- 让两个边框之间的线变细，这个必须在table标签中使用 --&gt;</span><br></pre></td></tr></table></figure>
+<img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200530185927.png" alt=""></li>
+</ul>
+<h2 id="3-内边距-padding"><a href="#3-内边距-padding" class="headerlink" title="3.内边距 padding"></a>3.内边距 padding</h2><p><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200530190004.png" alt=""><br><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200530190010.png" alt=""></p>
+<blockquote>
+<p>假如盒子被内边距padding给撑大了，可以使用宽高 - 内边距的大小。来保证和效果图大小一致。</p>
+</blockquote>
+<p><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200530190159.png" alt=""></p>
+<h3 id="新浪导航栏案例"><a href="#新浪导航栏案例" class="headerlink" title="新浪导航栏案例"></a>新浪导航栏案例</h3><h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.nav</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">border-top</span>: 3<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-id">#ff8500</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">border-bottom</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-id">#edeef0</span>;</span></span><br><span class="line">            height: 41px;</span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-id">#fcfcfc</span>;</span></span><br><span class="line">            </span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        a &#123;</span><br><span class="line">            display: inline-block;</span><br><span class="line">            font-size: 12px;</span><br><span class="line">            text-decoration: none;</span><br><span class="line">            line-height: 41px;</span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#4c4c4c</span>;</span></span><br><span class="line">            padding: 0 20px;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-id">#eee</span>;</span></span><br><span class="line">            color: red;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"nav"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>新浪导航<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>手机导航网<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>移动客户端<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>微博<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>游戏王<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="应用效果"><a href="#应用效果" class="headerlink" title="应用效果"></a>应用效果</h4><p><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200530190345.png" alt=""></p>
+<h2 id="4-外边距-margin"><a href="#4-外边距-margin" class="headerlink" title="4.外边距 margin"></a>4.外边距 margin</h2><h3 id="为什么需要margin"><a href="#为什么需要margin" class="headerlink" title="为什么需要margin?"></a>为什么需要margin?</h3><p><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200530190432.png" alt=""></p>
+<p><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200530190443.png" alt=""></p>
+<h3 id="块元素水平居中"><a href="#块元素水平居中" class="headerlink" title="块元素水平居中"></a>块元素水平居中</h3><p><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200530190524.png" alt=""></p>
+<h3 id="行内元素或者行内块元素水平居中的方法"><a href="#行内元素或者行内块元素水平居中的方法" class="headerlink" title="行内元素或者行内块元素水平居中的方法"></a>行内元素或者行内块元素水平居中的方法</h3><ul>
+<li>给其父元素添加 text-align: center<h3 id="外边距合并"><a href="#外边距合并" class="headerlink" title="外边距合并"></a>外边距合并</h3><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200530190643.png" alt=""></li>
+</ul>
+<p><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200530190707.png" alt=""></p>
+<blockquote>
+<p>合并受影响的是垂直方向的，水平方向的不受影响,垂直外边距的合并问题：之影响两个盒子的垂直方向，不影响水平方向，两个都是正，取较大值，一正一负进行加和，两个都是负，取绝对值较大的那个。</p>
+</blockquote>
+<h3 id="嵌套块元素垂直外边距塌陷"><a href="#嵌套块元素垂直外边距塌陷" class="headerlink" title="嵌套块元素垂直外边距塌陷"></a>嵌套块元素垂直外边距塌陷</h3><ul>
+<li>父元素和子元素同时有margin-top的时候，以最大的那个为准<br><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200530190902.png" alt=""></li>
+</ul>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200530190952.png" alt=""></p>
+<h3 id="清除内外边距"><a href="#清除内外边距" class="headerlink" title="清除内外边距"></a>清除内外边距</h3><ul>
+<li>在body里面写内容的时候，浏览器会默认给我们添加一个内边距和外边距<br><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200530191101.png" alt=""></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag"><i class="fa fa-tag"></i> 前端</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A018%E2%80%94%E2%80%94CSS%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7.html" rel="prev" title="前端知识学习18——CSS的三大特性">
+      <i class="fa fa-chevron-left"></i> 前端知识学习18——CSS的三大特性
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A020%E2%80%94%E2%80%94PS%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C.html" rel="next" title="前端知识学习20——PS的基本操作">
+      前端知识学习20——PS的基本操作 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-盒子模型的组成"><span class="nav-text">1.盒子模型的组成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-边框"><span class="nav-text">2.边框</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#边框的组成"><span class="nav-text">边框的组成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#边框样式"><span class="nav-text">边框样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#边框简写"><span class="nav-text">边框简写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#细线边框"><span class="nav-text">细线边框</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-内边距-padding"><span class="nav-text">3.内边距 padding</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#新浪导航栏案例"><span class="nav-text">新浪导航栏案例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码"><span class="nav-text">代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#应用效果"><span class="nav-text">应用效果</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-外边距-margin"><span class="nav-text">4.外边距 margin</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么需要margin"><span class="nav-text">为什么需要margin?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#块元素水平居中"><span class="nav-text">块元素水平居中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#行内元素或者行内块元素水平居中的方法"><span class="nav-text">行内元素或者行内块元素水平居中的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外边距合并"><span class="nav-text">外边距合并</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#嵌套块元素垂直外边距塌陷"><span class="nav-text">嵌套块元素垂直外边距塌陷</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解决方案"><span class="nav-text">解决方案</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#清除内外边距"><span class="nav-text">清除内外边距</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Justin"
+      src="/images/Xidian_logo.png">
+  <p class="site-author-name" itemprop="name">Justin</p>
+  <div class="site-description" itemprop="description">生活与代码记录</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">103</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/qq1120637483/Justin-Repository" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;qq1120637483&#x2F;Justin-Repository" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:qq1120637483@gmail.com" title="E-Mail → mailto:qq1120637483@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Justin</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+<!-- custom analytics part create by xiamo -->
+<script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+<script>AV.initialize("DH8QqnNypCF4gXlHLsy1Jj0A-gzGzoHsz", "7EIaK6bqecWJVkALHH4g9YPM");</script>
+<script>
+function showTime(Counter) {
+	var query = new AV.Query(Counter);
+	$(".leancloud_visitors").each(function() {
+		var url = $(this).attr("id").trim();
+		query.equalTo("url", url);
+		query.find({
+			success: function(results) {
+				if (results.length == 0) {
+					var content = $(document.getElementById(url)).text() + ': 0';
+					$(document.getElementById(url)).text(content);
+					return;
+				}
+				for (var i = 0; i < results.length; i++) {
+					var object = results[i];
+					var content = $(document.getElementById(url)).text() + ': ' + object.get('time');
+					$(document.getElementById(url)).text(content);
+				}
+			},
+			error: function(object, error) {
+				console.log("Error: " + error.code + " " + error.message);
+			}
+		});
+
+	});
+}
+
+function addCount(Counter) {
+	var Counter = AV.Object.extend("Counter");
+	url = $(".leancloud_visitors").attr('id').trim();
+	title = $(".leancloud_visitors").attr('data-flag-title').trim();
+	var query = new AV.Query(Counter);
+	query.equalTo("url", url);
+	query.find({
+		success: function(results) {
+			if (results.length > 0) {
+				var counter = results[0];
+				counter.fetchWhenSave(true);
+				counter.increment("time");
+				counter.save(null, {
+					success: function(counter) {
+						var content = $(document.getElementById(url)).text() + ': ' + counter.get('time');
+						$(document.getElementById(url)).text(content);
+					},
+					error: function(counter, error) {
+						console.log('Failed to save Visitor num, with error message: ' + error.message);
+					}
+				});
+			} else {
+				var newcounter = new Counter();
+				newcounter.set("title", title);
+				newcounter.set("url", url);
+				newcounter.set("time", 1);
+				newcounter.save(null, {
+					success: function(newcounter) {
+					    console.log("newcounter.get('time')="+newcounter.get('time'));
+						var content = $(document.getElementById(url)).text() + ': ' + newcounter.get('time');
+						$(document.getElementById(url)).text(content);
+					},
+					error: function(newcounter, error) {
+						console.log('Failed to create');
+					}
+				});
+			}
+		},
+		error: function(error) {
+			console.log('Error:' + error.code + " " + error.message);
+		}
+	});
+}
+$(function() {
+	var Counter = AV.Object.extend("Counter");
+	if ($('.leancloud_visitors').length == 1) {
+		addCount(Counter);
+	} else if ($('.post-title-link').length > 1) {
+		showTime(Counter);
+	}
+});
+</script>
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'DH8QqnNypCF4gXlHLsy1Jj0A-gzGzoHsz',
+      appKey     : '7EIaK6bqecWJVkALHH4g9YPM',
+      placeholder: "欢迎留下您的足迹！",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
