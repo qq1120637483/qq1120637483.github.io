@@ -1762,4 +1762,32 @@ mycode\Scripts\activate</code></pre><h3 id="4-打开我们的VSCode，选择我�
         <tag>优秀鉴赏</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Word中有序编号第二行顶格的设置方法</title>
+    <url>/Word%E4%B8%AD%E6%9C%89%E5%BA%8F%E7%BC%96%E5%8F%B7%E7%AC%AC%E4%BA%8C%E8%A1%8C%E9%A1%B6%E6%A0%BC%E7%9A%84%E8%AE%BE%E7%BD%AE%E6%96%B9%E6%B3%95.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="如何让word中有序编号第二行顶格？"><a href="#如何让word中有序编号第二行顶格？" class="headerlink" title="如何让word中有序编号第二行顶格？"></a>如何让word中有序编号第二行顶格？</h2><p>效果图如下：<br><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20201004102827.png" alt=""></p>
+<h2 id="解决步骤"><a href="#解决步骤" class="headerlink" title="解决步骤"></a>解决步骤</h2><ul>
+<li>1：选中相关文本，点击 调整列表缩进</li>
+</ul>
+<p><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20201004102930.png" alt=""></p>
+<ul>
+<li>2：将文本缩进置为0</li>
+</ul>
+<p><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20201004103037.png" alt=""></p>
+<h3 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h3><p><a href="https://www.jianshu.com/p/9e9f547e65b2" target="_blank" rel="noopener">Word技巧：如何让带编号的段落第二行顶头排版？</a></p>
+]]></content>
+      <tags>
+        <tag>Word</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>前端知识学习32——精灵图.</title>
+    <url>/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A032%E2%80%94%E2%80%94%E7%B2%BE%E7%81%B5%E5%9B%BE..html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="1：为什么需要精灵图技术？"><a href="#1：为什么需要精灵图技术？" class="headerlink" title="1：为什么需要精灵图技术？"></a>1：为什么需要精灵图技术？</h2><p>当网页中的图像，过多的时候，服务器就会频繁的接收和发送请求图片，造成服务器请求压力过大，大大降低页面的加载速度。为了有效的减少服务器发送请求和接收的次数，提高页面的加载速度，出现了CSS精灵技术。</p>
+<h2 id="2：精灵图的核心原理"><a href="#2：精灵图的核心原理" class="headerlink" title="2：精灵图的核心原理"></a>2：精灵图的核心原理</h2><p>将网页中的一些小的背景图片，整合到一张大图中，这样服务器只需要一次请求就可以了。</p>
+<h2 id="3"><a href="#3" class="headerlink" title="3:"></a>3:</h2>]]></content>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
 </search>

@@ -186,6 +186,186 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/LeetCode%E2%80%94%E2%80%9402.%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Xidian_logo.png">
+      <meta itemprop="name" content="Justin">
+      <meta itemprop="description" content="生活与代码记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Faith&Passion">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/LeetCode%E2%80%94%E2%80%9402.%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC.html" class="post-title-link" itemprop="url">LeetCode——02.整数反转</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-05-25 16:16:21 / 修改时间：16:17:43" itemprop="dateCreated datePublished" datetime="2020-05-25T16:16:21+08:00">2020-05-25</time>
+            </span>
+
+          
+            <span id="/LeetCode%E2%80%94%E2%80%9402.%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC.html" class="post-meta-item leancloud_visitors" data-flag-title="LeetCode——02.整数反转" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/LeetCode%E2%80%94%E2%80%9402.%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/LeetCode%E2%80%94%E2%80%9402.%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="第7题（整数反转）"><a href="#第7题（整数反转）" class="headerlink" title="第7题（整数反转）"></a>第7题（整数反转）</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reverse</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type x: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="comment"># 无论正负先转为正数</span></span><br><span class="line">        integ = abs(x)</span><br><span class="line">        <span class="comment"># 定义返回的结果</span></span><br><span class="line">        result = <span class="number">0</span></span><br><span class="line">        <span class="comment"># 只要正数不为零就进入循环</span></span><br><span class="line">        <span class="keyword">while</span> integ != <span class="number">0</span>:</span><br><span class="line">            <span class="comment"># 取出最后一位</span></span><br><span class="line">            last_num = integ % <span class="number">10</span></span><br><span class="line">            <span class="comment"># 去掉最后一位</span></span><br><span class="line">            integ = integ // <span class="number">10</span></span><br><span class="line">            <span class="comment"># 组合反转后的数字，因为最后一位和导数第二位有大致十倍的关系</span></span><br><span class="line">            result = result * <span class="number">10</span> + last_num</span><br><span class="line">        <span class="comment"># 使得输出的数据符合特定区间 否则返回0</span></span><br><span class="line">        <span class="keyword">if</span> x &gt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">if</span> result &lt;= <span class="number">2</span>**<span class="number">31</span> - <span class="number">1</span>:</span><br><span class="line">                <span class="keyword">return</span> result</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">if</span> -result &lt; -(<span class="number">2</span>**<span class="number">31</span>):</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> (-result)</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/LeetCode%E2%80%94%E2%80%9402.%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/python%E2%80%94%E2%80%94%E8%BF%90%E7%AE%97%E7%AC%A6.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Xidian_logo.png">
+      <meta itemprop="name" content="Justin">
+      <meta itemprop="description" content="生活与代码记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Faith&Passion">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/python%E2%80%94%E2%80%94%E8%BF%90%E7%AE%97%E7%AC%A6.html" class="post-title-link" itemprop="url">python——运算符</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-05-25 15:06:54 / 修改时间：16:23:29" itemprop="dateCreated datePublished" datetime="2020-05-25T15:06:54+08:00">2020-05-25</time>
+            </span>
+
+          
+            <span id="/python%E2%80%94%E2%80%94%E8%BF%90%E7%AE%97%E7%AC%A6.html" class="post-meta-item leancloud_visitors" data-flag-title="python——运算符" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/python%E2%80%94%E2%80%94%E8%BF%90%E7%AE%97%E7%AC%A6.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/python%E2%80%94%E2%80%94%E8%BF%90%E7%AE%97%E7%AC%A6.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="符号-的作用"><a href="#符号-的作用" class="headerlink" title="符号 //的作用"></a>符号 //的作用</h2><ul>
+<li>取整除 - 返回商的整数部分（向下取整）<br><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200525150938.png" alt></li>
+</ul>
+<h2 id="符号abs的作用"><a href="#符号abs的作用" class="headerlink" title="符号abs的作用"></a>符号abs的作用</h2><ul>
+<li>取绝对值</li>
+</ul>
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/python%E2%80%94%E2%80%94%E8%BF%90%E7%AE%97%E7%AC%A6.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/LeetCode%E2%80%94%E2%80%9401.%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -925,185 +1105,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A012%E2%80%94%E2%80%94Emmet%E8%AF%AD%E6%B3%95.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Xidian_logo.png">
-      <meta itemprop="name" content="Justin">
-      <meta itemprop="description" content="生活与代码记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Faith&Passion">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A012%E2%80%94%E2%80%94Emmet%E8%AF%AD%E6%B3%95.html" class="post-title-link" itemprop="url">前端知识学习12——Emmet语法</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-05-20 21:51:06 / 修改时间：21:57:14" itemprop="dateCreated datePublished" datetime="2020-05-20T21:51:06+08:00">2020-05-20</time>
-            </span>
-
-          
-            <span id="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A012%E2%80%94%E2%80%94Emmet%E8%AF%AD%E6%B3%95.html" class="post-meta-item leancloud_visitors" data-flag-title="前端知识学习12——Emmet语法" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A012%E2%80%94%E2%80%94Emmet%E8%AF%AD%E6%B3%95.html#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A012%E2%80%94%E2%80%94Emmet%E8%AF%AD%E6%B3%95.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="1-标签名快速进行补全"><a href="#1-标签名快速进行补全" class="headerlink" title="1.标签名快速进行补全"></a>1.标签名快速进行补全</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">标签名 + tab</span><br></pre></td></tr></table></figure>
-<h3 id="2-生成多个相同的标签"><a href="#2-生成多个相同的标签" class="headerlink" title="2.生成多个相同的标签"></a>2.生成多个相同的标签</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">div*3 + tab</span><br></pre></td></tr></table></figure>
-<h3 id="3-快速生成父子级关系标签"><a href="#3-快速生成父子级关系标签" class="headerlink" title="3.快速生成父子级关系标签"></a>3.快速生成父子级关系标签</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ul&gt;li   #注意这里没有空格</span><br></pre></td></tr></table></figure>
-<h3 id="4-快速生成兄弟标签"><a href="#4-快速生成兄弟标签" class="headerlink" title="4.快速生成兄弟标签"></a>4.快速生成兄弟标签</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">div+p</span><br></pre></td></tr></table></figure>
-<h3 id="5-快速生成带类名或者id名的标签"><a href="#5-快速生成带类名或者id名的标签" class="headerlink" title="5.快速生成带类名或者id名的标签"></a>5.快速生成带类名或者id名的标签</h3>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A012%E2%80%94%E2%80%94Emmet%E8%AF%AD%E6%B3%95.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A011%E2%80%94%E2%80%94%E6%96%B0%E9%97%BB%E6%A1%88%E4%BE%8B.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Xidian_logo.png">
-      <meta itemprop="name" content="Justin">
-      <meta itemprop="description" content="生活与代码记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Faith&Passion">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A011%E2%80%94%E2%80%94%E6%96%B0%E9%97%BB%E6%A1%88%E4%BE%8B.html" class="post-title-link" itemprop="url">前端知识学习11——新闻案例</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-05-19 19:26:39 / 修改时间：19:29:35" itemprop="dateCreated datePublished" datetime="2020-05-19T19:26:39+08:00">2020-05-19</time>
-            </span>
-
-          
-            <span id="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A011%E2%80%94%E2%80%94%E6%96%B0%E9%97%BB%E6%A1%88%E4%BE%8B.html" class="post-meta-item leancloud_visitors" data-flag-title="前端知识学习11——新闻案例" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A011%E2%80%94%E2%80%94%E6%96%B0%E9%97%BB%E6%A1%88%E4%BE%8B.html#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A011%E2%80%94%E2%80%94%E6%96%B0%E9%97%BB%E6%A1%88%E4%BE%8B.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>心得体会：<br>给图片加居中是没有效果的，可以给它的父级标签加居中。<br>效果展示：<br><img src="https://p.pstatp.com/origin/fee0000313c8f5ec5f2b" alt><br>代码展示：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">       body &#123;</span><br><span class="line"><span class="css">           <span class="comment">/* 28px指的是行高 16px指的是字体的大小 */</span></span></span><br><span class="line">           font: 16px/28px "微软雅黑";</span><br><span class="line">       &#125;</span><br><span class="line">       h1 &#123;</span><br><span class="line">           text-align: center;</span><br><span class="line">           font-weight: normal;</span><br><span class="line">       &#125;</span><br><span class="line"><span class="css">       <span class="selector-class">.gray</span> &#123;</span></span><br><span class="line"><span class="css">           <span class="selector-tag">color</span>: <span class="selector-id">#888888</span>;</span></span><br><span class="line">            text-align: center;</span><br><span class="line">            font-size: 15px;</span><br><span class="line">            </span><br><span class="line">       &#125;</span><br><span class="line">       a &#123;</span><br><span class="line">           text-decoration: none;</span><br><span class="line">       &#125;</span><br><span class="line"><span class="css">       <span class="selector-class">.search</span> &#123;</span></span><br><span class="line"><span class="css">           <span class="selector-tag">color</span>: <span class="selector-id">#888888</span>;</span></span><br><span class="line">       &#125;</span><br><span class="line">       p &#123;</span><br><span class="line">           text-indent: 2em;</span><br><span class="line">       &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>北方高温明日达鼎盛 京津冀多地地表温度将超60℃<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"gray"</span>&gt;</span></span><br><span class="line">            2019-07-03 16:31:47 来源: <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>中国天气网<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"请输入查询条件"</span> <span class="attr">class</span>=<span class="string">"search"</span>&gt;</span> <span class="tag">&lt;<span class="name">button</span> <span class="attr">value</span>=<span class="string">"搜索"</span>&gt;</span>搜索<span class="tag">&lt;/<span class="name">button</span>&gt;</span>     </span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>中国天气网讯 今天（3日），华北、黄淮多地出现高温天气，截至下午2点，北京、天津、郑州等地气温突破35℃。预报显示，今后三天（3-5日），这一带的高温天气将继续发酵，高温范围以及强度将在4日达到鼎盛，预计北京、天津、石家庄、济南等地明天的最高气温有望突破38℃，其中北京和石家庄的最高气温还有望创今年以来的新高。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">        <span class="tag">&lt;<span class="name">h4</span>&gt;</span>气温41.4℃！地温66.5！北京强势迎七月首个高温日<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>今天，华北、黄淮一带的高温持续发酵，截至今天下午2点，陕西北部、山西西南部、河北南部、北京、天津、山东西部、河南北部最高气温已普遍超过35℃。大城市中，北京、天津、郑州均迎来高温日。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"text-align: center;"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/pic.jpeg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>在阳光暴晒下，地表温度也逐渐走高。今天下午2点，华北黄淮大部地区的地表温度都在50℃以上，部分地区地表温度甚至超过60℃。其中，河北衡水地表温度高达68.3℃，天津站和北京站附近的地表温度分别高达66.6℃和66.5℃。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">        <span class="tag">&lt;<span class="name">h4</span>&gt;</span>明日热度再升级！京津冀携手冲击38℃+<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>中国天气网气象分析师王伟跃介绍，明天（4日），华北、黄淮地区35℃以上的高温天气还将继续升级，并进入鼎盛阶段，高温强度和范围都将发展到最强。 明天，北京南部、天津大部、河北中部和南部、山东中部和西部、山西南部局地、河南北部、东北部分地区的最高气温都将达到或超过35℃。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>不过，专家提醒，济南被雨水天气完美绕开，因此未来一周，当地的高温还会天天上岗。在此提醒当地居民注意防暑降温，防范持续高温带来的各种不利影响。（文/张慧 数据支持/王伟跃 胡啸 审核/刘文静 张方丽）<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">       </span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"font-size: 12px; color: #888888;"</span>&gt;</span>本文来源：中国天气网 责任编辑：刘京_NO5631<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">       </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A011%E2%80%94%E2%80%94%E6%96%B0%E9%97%BB%E6%A1%88%E4%BE%8B.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1175,14 +1176,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">103</span>
+          <span class="site-state-item-count">105</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
