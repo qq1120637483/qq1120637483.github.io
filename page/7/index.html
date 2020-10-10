@@ -186,6 +186,382 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/parsel%E8%A7%A3%E6%9E%90%E7%88%AC%E8%99%AB%E6%97%B6%E6%AD%A3%E5%88%99%E5%8C%B9%E9%85%8D%E7%9A%84%E9%97%AE%E9%A2%98.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Xidian_logo.png">
+      <meta itemprop="name" content="Justin">
+      <meta itemprop="description" content="生活与代码记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Faith&Passion">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/parsel%E8%A7%A3%E6%9E%90%E7%88%AC%E8%99%AB%E6%97%B6%E6%AD%A3%E5%88%99%E5%8C%B9%E9%85%8D%E7%9A%84%E9%97%AE%E9%A2%98.html" class="post-title-link" itemprop="url">parsel解析爬虫时正则匹配的问题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-05-23 12:22:51 / 修改时间：12:27:46" itemprop="dateCreated datePublished" datetime="2020-05-23T12:22:51+08:00">2020-05-23</time>
+            </span>
+
+          
+            <span id="/parsel%E8%A7%A3%E6%9E%90%E7%88%AC%E8%99%AB%E6%97%B6%E6%AD%A3%E5%88%99%E5%8C%B9%E9%85%8D%E7%9A%84%E9%97%AE%E9%A2%98.html" class="post-meta-item leancloud_visitors" data-flag-title="parsel解析爬虫时正则匹配的问题" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/parsel%E8%A7%A3%E6%9E%90%E7%88%AC%E8%99%AB%E6%97%B6%E6%AD%A3%E5%88%99%E5%8C%B9%E9%85%8D%E7%9A%84%E9%97%AE%E9%A2%98.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/parsel%E8%A7%A3%E6%9E%90%E7%88%AC%E8%99%AB%E6%97%B6%E6%AD%A3%E5%88%99%E5%8C%B9%E9%85%8D%E7%9A%84%E9%97%AE%E9%A2%98.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>今天，在进行parsel的正则匹配的时候，发现怎么都匹配不上,下面这样的字符。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;nbsp;&amp;nbsp;</span><br></pre></td></tr></table></figure>
+<p>经过反复的头脑风暴和不断的测试，我发现，使用下面的方法可以实现<br>先使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sel.css(&#39;font::text&#39;).getall()</span><br></pre></td></tr></table></figure>
+<p>把该函数匹配到的字符进行输出，我发现是下面这样的。<br><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200523122632.png" alt><br>也就是说nbsp变成了\xa0</p>
+<h2 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sel.re(r&#39;\n \n\xa0\xa0(.*?)&lt;br&gt;&#39;)</span><br></pre></td></tr></table></figure>
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/parsel%E8%A7%A3%E6%9E%90%E7%88%AC%E8%99%AB%E6%97%B6%E6%AD%A3%E5%88%99%E5%8C%B9%E9%85%8D%E7%9A%84%E9%97%AE%E9%A2%98.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E7%88%AC%E5%8F%96%E7%8C%AB%E7%9C%BC%E7%94%B5%E5%BD%B1%E6%8E%92%E8%A1%8C%E6%A6%9C%E8%A2%AB%E9%87%8D%E5%AE%9A%E5%90%91.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Xidian_logo.png">
+      <meta itemprop="name" content="Justin">
+      <meta itemprop="description" content="生活与代码记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Faith&Passion">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E7%88%AC%E5%8F%96%E7%8C%AB%E7%9C%BC%E7%94%B5%E5%BD%B1%E6%8E%92%E8%A1%8C%E6%A6%9C%E8%A2%AB%E9%87%8D%E5%AE%9A%E5%90%91.html" class="post-title-link" itemprop="url">爬取猫眼电影排行榜被重定向</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-05-22 09:33:34 / 修改时间：09:37:18" itemprop="dateCreated datePublished" datetime="2020-05-22T09:33:34+08:00">2020-05-22</time>
+            </span>
+
+          
+            <span id="/%E7%88%AC%E5%8F%96%E7%8C%AB%E7%9C%BC%E7%94%B5%E5%BD%B1%E6%8E%92%E8%A1%8C%E6%A6%9C%E8%A2%AB%E9%87%8D%E5%AE%9A%E5%90%91.html" class="post-meta-item leancloud_visitors" data-flag-title="爬取猫眼电影排行榜被重定向" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/%E7%88%AC%E5%8F%96%E7%8C%AB%E7%9C%BC%E7%94%B5%E5%BD%B1%E6%8E%92%E8%A1%8C%E6%A6%9C%E8%A2%AB%E9%87%8D%E5%AE%9A%E5%90%91.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/%E7%88%AC%E5%8F%96%E7%8C%AB%E7%9C%BC%E7%94%B5%E5%BD%B1%E6%8E%92%E8%A1%8C%E6%A6%9C%E8%A2%AB%E9%87%8D%E5%AE%9A%E5%90%91.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>今天上午，在学习多线程爬虫的时候，原本想爬取猫眼电影榜单的时候，反复遇到重定向的问题，后来经过系统性的排查发现是问题处在了U-A伪装上面。</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>1.使用下面的User-Agent</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">headers &#x3D; &#123;</span><br><span class="line">            &#39;user-agent&#39;: &#39;Mozilla &#x2F; 5.0(Windows NT 10.0; WOW64) AppleWebKit &#x2F; 537.36(KHTML, likeGecko) Chrome &#x2F; 53.0.2785.104Safari &#x2F; 537.36Core &#x2F; 1.53.4882.400QQBrowser &#x2F; 9.7.13059.400&#39;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.不使用User-Agent</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">简直就是玄学啊！</span><br></pre></td></tr></table></figure>
+<h4 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h4><p><a href="https://www.cnblogs.com/yocichen/p/11812637.html" target="_blank" rel="noopener">https://www.cnblogs.com/yocichen/p/11812637.html</a></p>
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E7%88%AC%E5%8F%96%E7%8C%AB%E7%9C%BC%E7%94%B5%E5%BD%B1%E6%8E%92%E8%A1%8C%E6%A6%9C%E8%A2%AB%E9%87%8D%E5%AE%9A%E5%90%91.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A013%E2%80%94%E2%80%94%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Xidian_logo.png">
+      <meta itemprop="name" content="Justin">
+      <meta itemprop="description" content="生活与代码记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Faith&Passion">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A013%E2%80%94%E2%80%94%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8.html" class="post-title-link" itemprop="url">前端知识学习13——复合选择器</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-05-20 21:57:40 / 修改时间：22:15:53" itemprop="dateCreated datePublished" datetime="2020-05-20T21:57:40+08:00">2020-05-20</time>
+            </span>
+
+          
+            <span id="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A013%E2%80%94%E2%80%94%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8.html" class="post-meta-item leancloud_visitors" data-flag-title="前端知识学习13——复合选择器" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A013%E2%80%94%E2%80%94%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A013%E2%80%94%E2%80%94%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="1-后代选择器"><a href="#1-后代选择器" class="headerlink" title="1.后代选择器"></a>1.后代选择器</h2><ul>
+<li>只修改ol下的li标签<br><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200520215907.png" alt></li>
+</ul>
+<h2 id="2-子选择器"><a href="#2-子选择器" class="headerlink" title="2.子选择器"></a>2.子选择器</h2><ul>
+<li>用&gt;表示，注意区分子选择器和后代选择器的区别<br><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200520215951.png" alt><blockquote>
+<p>区别：后代选择器会将该标签下面的所有标签选中，但是子选择器只会将子标签选中。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="3-并集选择器"><a href="#3-并集选择器" class="headerlink" title="3.并集选择器"></a>3.并集选择器</h2><ul>
+<li>同时选中多个标签（中间用逗号隔开，一般竖着写标签）<br><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200520220046.png" alt></li>
+</ul>
+<h2 id="4-伪类选择器"><a href="#4-伪类选择器" class="headerlink" title="4.伪类选择器"></a>4.伪类选择器</h2><h3 id="4-1链接伪类选择器"><a href="#4-1链接伪类选择器" class="headerlink" title="4.1链接伪类选择器"></a>4.1链接伪类选择器</h3><p><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200520220133.png" alt><br><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200520220142.png" alt></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A013%E2%80%94%E2%80%94%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A012%E2%80%94%E2%80%94Emmet%E8%AF%AD%E6%B3%95.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Xidian_logo.png">
+      <meta itemprop="name" content="Justin">
+      <meta itemprop="description" content="生活与代码记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Faith&Passion">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A012%E2%80%94%E2%80%94Emmet%E8%AF%AD%E6%B3%95.html" class="post-title-link" itemprop="url">前端知识学习12——Emmet语法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-05-20 21:51:06 / 修改时间：21:57:14" itemprop="dateCreated datePublished" datetime="2020-05-20T21:51:06+08:00">2020-05-20</time>
+            </span>
+
+          
+            <span id="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A012%E2%80%94%E2%80%94Emmet%E8%AF%AD%E6%B3%95.html" class="post-meta-item leancloud_visitors" data-flag-title="前端知识学习12——Emmet语法" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A012%E2%80%94%E2%80%94Emmet%E8%AF%AD%E6%B3%95.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A012%E2%80%94%E2%80%94Emmet%E8%AF%AD%E6%B3%95.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="1-标签名快速进行补全"><a href="#1-标签名快速进行补全" class="headerlink" title="1.标签名快速进行补全"></a>1.标签名快速进行补全</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">标签名 + tab</span><br></pre></td></tr></table></figure>
+<h3 id="2-生成多个相同的标签"><a href="#2-生成多个相同的标签" class="headerlink" title="2.生成多个相同的标签"></a>2.生成多个相同的标签</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">div*3 + tab</span><br></pre></td></tr></table></figure>
+<h3 id="3-快速生成父子级关系标签"><a href="#3-快速生成父子级关系标签" class="headerlink" title="3.快速生成父子级关系标签"></a>3.快速生成父子级关系标签</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ul&gt;li   #注意这里没有空格</span><br></pre></td></tr></table></figure>
+<h3 id="4-快速生成兄弟标签"><a href="#4-快速生成兄弟标签" class="headerlink" title="4.快速生成兄弟标签"></a>4.快速生成兄弟标签</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">div+p</span><br></pre></td></tr></table></figure>
+<h3 id="5-快速生成带类名或者id名的标签"><a href="#5-快速生成带类名或者id名的标签" class="headerlink" title="5.快速生成带类名或者id名的标签"></a>5.快速生成带类名或者id名的标签</h3>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A012%E2%80%94%E2%80%94Emmet%E8%AF%AD%E6%B3%95.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A011%E2%80%94%E2%80%94%E6%96%B0%E9%97%BB%E6%A1%88%E4%BE%8B.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -724,374 +1100,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A007%E2%80%94%E2%80%94CSS%E5%9F%BA%E7%A1%80%E9%80%89%E6%8B%A9%E5%99%A8.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Xidian_logo.png">
-      <meta itemprop="name" content="Justin">
-      <meta itemprop="description" content="生活与代码记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Faith&Passion">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A007%E2%80%94%E2%80%94CSS%E5%9F%BA%E7%A1%80%E9%80%89%E6%8B%A9%E5%99%A8.html" class="post-title-link" itemprop="url">前端知识学习07——CSS基础选择器</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-05-15 17:17:38 / 修改时间：17:29:41" itemprop="dateCreated datePublished" datetime="2020-05-15T17:17:38+08:00">2020-05-15</time>
-            </span>
-
-          
-            <span id="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A007%E2%80%94%E2%80%94CSS%E5%9F%BA%E7%A1%80%E9%80%89%E6%8B%A9%E5%99%A8.html" class="post-meta-item leancloud_visitors" data-flag-title="前端知识学习07——CSS基础选择器" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A007%E2%80%94%E2%80%94CSS%E5%9F%BA%E7%A1%80%E9%80%89%E6%8B%A9%E5%99%A8.html#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A007%E2%80%94%E2%80%94CSS%E5%9F%BA%E7%A1%80%E9%80%89%E6%8B%A9%E5%99%A8.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<p>CSS选择器进行样式书写的时候，都是在head标签里的style标签里进行的。</p>
-</blockquote>
-<h2 id="1-标签选择器"><a href="#1-标签选择器" class="headerlink" title="1. 标签选择器"></a>1. 标签选择器</h2><ul>
-<li>将标签名作为选择器，修改后所有的这种标签的样式都被修改了<br><img src="https://gitee.com/justin2/pic/raw/master/20200515172037.png" alt><br><img src="https://gitee.com/justin2/pic/raw/master/20200515172049.png" alt><h2 id="2-类选择器"><a href="#2-类选择器" class="headerlink" title="2. 类选择器"></a>2. 类选择器</h2></li>
-<li>在标签中添加class名字，然后在style标签里使用 （.名字）</li>
-<li>div盒子里只能使用backgroud-color，我第一次使用color的时候，是无反应的，所以以后在写的时候，如果遇到无效的情况，可以尝试将这两种进行切换<br><img src="https://gitee.com/justin2/pic/raw/master/20200515172200.png" alt><blockquote>
-<p>下面的是标签选择器<br><img src="https://gitee.com/justin2/pic/raw/master/20200515172346.png" alt></p>
-</blockquote>
-<h3 id="2-1-多类名"><a href="#2-1-多类名" class="headerlink" title="2.1 多类名"></a>2.1 多类名</h3></li>
-<li>使用多类名，可以使我们的标签受到多个类的影响，也可以将相同的样式集中到一个类中。<br><img src="https://gitee.com/justin2/pic/raw/master/20200515172554.png" alt><h2 id="3-id选择器"><a href="#3-id选择器" class="headerlink" title="3. id选择器"></a>3. id选择器</h2></li>
-<li>id选择器和类选择器的区别在于，id选择器原则上在一个html页面中只允许出现1次，这样可以防止后端JS调用的时候，防止出错。<br><img src="https://gitee.com/justin2/pic/raw/master/20200515172710.png" alt><h2 id="4-通配符选择器"><a href="#4-通配符选择器" class="headerlink" title="4. 通配符选择器"></a>4. 通配符选择器</h2></li>
-<li>通配符选择器会将所有标签进行选中<br><img src="https://gitee.com/justin2/pic/raw/master/20200515172757.png" alt><h2 id="5-基础选择器总结"><a href="#5-基础选择器总结" class="headerlink" title="5. 基础选择器总结"></a>5. 基础选择器总结</h2></li>
-<li>熟记下面四种基础选择器的特点<br><img src="https://gitee.com/justin2/pic/raw/master/20200515172917.png" alt></li>
-</ul>
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A007%E2%80%94%E2%80%94CSS%E5%9F%BA%E7%A1%80%E9%80%89%E6%8B%A9%E5%99%A8.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A006%E2%80%94%E2%80%94%E6%B3%A8%E5%86%8C%E5%B0%8F%E6%A1%88%E4%BE%8B.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Xidian_logo.png">
-      <meta itemprop="name" content="Justin">
-      <meta itemprop="description" content="生活与代码记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Faith&Passion">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A006%E2%80%94%E2%80%94%E6%B3%A8%E5%86%8C%E5%B0%8F%E6%A1%88%E4%BE%8B.html" class="post-title-link" itemprop="url">前端知识学习06——注册小案例</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-05-14 19:21:15 / 修改时间：19:24:35" itemprop="dateCreated datePublished" datetime="2020-05-14T19:21:15+08:00">2020-05-14</time>
-            </span>
-
-          
-            <span id="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A006%E2%80%94%E2%80%94%E6%B3%A8%E5%86%8C%E5%B0%8F%E6%A1%88%E4%BE%8B.html" class="post-meta-item leancloud_visitors" data-flag-title="前端知识学习06——注册小案例" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A006%E2%80%94%E2%80%94%E6%B3%A8%E5%86%8C%E5%B0%8F%E6%A1%88%E4%BE%8B.html#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A006%E2%80%94%E2%80%94%E6%B3%A8%E5%86%8C%E5%B0%8F%E6%A1%88%E4%BE%8B.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>注册表单案例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span>&gt;</span>青春不常在，请珍惜时间！<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">table</span> <span class="attr">width</span> = <span class="string">"500px"</span>  <span class="attr">cellspacing</span> = <span class="string">"0"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 性别 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>性别：<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"sex"</span> <span class="attr">id</span>=<span class="string">"sex1"</span>&gt;</span>  <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"sex1"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/man.jpg"</span>&gt;</span> 男<span class="tag">&lt;/<span class="name">label</span>&gt;</span>  </span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"sex"</span> <span class="attr">id</span>=<span class="string">"sex2"</span>&gt;</span>  <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"sex2"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/women.jpg"</span>&gt;</span> 女<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 生日 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>生日：<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> &gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span>--请选择年份--<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span>1995<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span>1996<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span>1997<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span>1998<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> &gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span>--请选择月份--<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span>1<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span>2<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span>3<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span>4<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span> &gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span>--请选择日--<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span>1<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span>2<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span>3<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span>4<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 所在地区 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>所在地区<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"请输入您在的地区"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 婚姻状况 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>婚姻状况<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"marriage"</span> <span class="attr">id</span>=<span class="string">""</span>&gt;</span> 未婚</span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"marriage"</span> <span class="attr">id</span>=<span class="string">""</span>&gt;</span> 已婚</span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"marriage"</span> <span class="attr">id</span>=<span class="string">""</span>&gt;</span> 离婚                </span><br><span class="line">            <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 学历 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>学历<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"请输入您的学历状况"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 喜欢的类型 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>喜欢的类型：<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span>&gt;</span> 妩媚的</span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span>&gt;</span> 可爱的</span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span>&gt;</span> 小鲜肉</span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">""</span>&gt;</span> 老腊肉</span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">checked</span> = <span class="string">"checked"</span>&gt;</span> 都喜欢</span><br><span class="line">            <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 自我介绍 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>自我介绍<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">textarea</span> &gt;</span>自我介绍<span class="tag">&lt;/<span class="name">textarea</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 免费注册 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"免费注册"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 默认同意条款 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">checked</span> = <span class="string">"checked"</span>&gt;</span> 我同意注册条款和会员加入标准</span><br><span class="line">            <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 立即登录 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>我是至尊VIP，赶紧让我登录！<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 用户承诺 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">h4</span>&gt;</span>我承诺：<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">li</span>&gt;</span>年满18岁、单身<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">li</span>&gt;</span>抱着严肃的态度<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">li</span>&gt;</span>真诚寻找另一半<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="效果图："><a href="#效果图：" class="headerlink" title="效果图："></a>效果图：</h3><p><img src="https://gitee.com/justin2/pic/raw/master/20200514192334.png" alt></p>
-<h3 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h3><p>上图是在table标签中里的td写的，最后把border去掉即可。</p>
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A006%E2%80%94%E2%80%94%E6%B3%A8%E5%86%8C%E5%B0%8F%E6%A1%88%E4%BE%8B.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/python%E2%80%94%E2%80%94%E6%8F%90%E5%8F%96%E6%BC%8F%E6%B4%9E%E6%8F%8F%E8%BF%B0%E4%B8%AD%E6%9C%89%E4%BA%89%E8%AE%AE%E7%9A%84%E6%95%B0%E6%8D%AE.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Xidian_logo.png">
-      <meta itemprop="name" content="Justin">
-      <meta itemprop="description" content="生活与代码记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Faith&Passion">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/python%E2%80%94%E2%80%94%E6%8F%90%E5%8F%96%E6%BC%8F%E6%B4%9E%E6%8F%8F%E8%BF%B0%E4%B8%AD%E6%9C%89%E4%BA%89%E8%AE%AE%E7%9A%84%E6%95%B0%E6%8D%AE.html" class="post-title-link" itemprop="url">python——提取漏洞描述中有争议的数据</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-05-13 18:43:44 / 修改时间：18:44:52" itemprop="dateCreated datePublished" datetime="2020-05-13T18:43:44+08:00">2020-05-13</time>
-            </span>
-
-          
-            <span id="/python%E2%80%94%E2%80%94%E6%8F%90%E5%8F%96%E6%BC%8F%E6%B4%9E%E6%8F%8F%E8%BF%B0%E4%B8%AD%E6%9C%89%E4%BA%89%E8%AE%AE%E7%9A%84%E6%95%B0%E6%8D%AE.html" class="post-meta-item leancloud_visitors" data-flag-title="python——提取漏洞描述中有争议的数据" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/python%E2%80%94%E2%80%94%E6%8F%90%E5%8F%96%E6%BC%8F%E6%B4%9E%E6%8F%8F%E8%BF%B0%E4%B8%AD%E6%9C%89%E4%BA%89%E8%AE%AE%E7%9A%84%E6%95%B0%E6%8D%AE.html#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/python%E2%80%94%E2%80%94%E6%8F%90%E5%8F%96%E6%BC%8F%E6%B4%9E%E6%8F%8F%E8%BF%B0%E4%B8%AD%E6%9C%89%E4%BA%89%E8%AE%AE%E7%9A%84%E6%95%B0%E6%8D%AE.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="1-提取数据"><a href="#1-提取数据" class="headerlink" title="1. 提取数据"></a>1. 提取数据</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># @time :2020-5-12</span></span><br><span class="line"><span class="comment"># @Author : 贾培养</span></span><br><span class="line"><span class="comment"># @Email : 1120637483@qq.com</span></span><br><span class="line"><span class="keyword">import</span> openpyxl</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个excel workbook对象</span></span><br><span class="line">book = openpyxl.Workbook()</span><br><span class="line"><span class="comment"># 产生一个sheet</span></span><br><span class="line">sh = book.active</span><br><span class="line"><span class="comment"># 修改当前sheet标题为 漏洞数据信息表</span></span><br><span class="line">sh.title = <span class="string">'特殊文本信息表'</span></span><br><span class="line"><span class="comment"># 根据名称获取某个sheet对象</span></span><br><span class="line">sh = book[<span class="string">'特殊文本信息表'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 标记</span></span><br><span class="line">flag = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 导入我们的xlsx文件</span></span><br><span class="line">wb = openpyxl.load_workbook(<span class="string">"vig_all.xlsx"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打开具体的某一个表</span></span><br><span class="line">ws = wb.get_sheet_by_name(<span class="string">"Sheet"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># cve列</span></span><br><span class="line">cve_column = ws[<span class="string">'C'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># desciprtion列</span></span><br><span class="line">des_column = ws[<span class="string">'G'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 遍历每一个CVE编号</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(cve_column)):</span><br><span class="line">    <span class="comment"># print(cve_column[i].value)</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">if</span> bool(re.search(<span class="string">r"\** REJECT \**"</span>,des_column[i].value)):</span><br><span class="line">            print(des_column[i].value)</span><br><span class="line">            sh[<span class="string">'A'</span> + str(flag)] = cve_column[i].value</span><br><span class="line">            sh[<span class="string">'B'</span> + str(flag)] = des_column[i].value</span><br><span class="line">            flag = flag + <span class="number">1</span></span><br><span class="line">    <span class="keyword">except</span> Exception :</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">book.save(<span class="string">"特殊文本.xlsx"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(<span class="string">"---运行结束---"</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="2-数据去重"><a href="#2-数据去重" class="headerlink" title="2. 数据去重"></a>2. 数据去重</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"># @time :2020-5-12</span><br><span class="line"># @Author : 贾培养</span><br><span class="line"># @Email : 1120637483@qq.com</span><br><span class="line">import openpyxl</span><br><span class="line">import re</span><br><span class="line"></span><br><span class="line"># 创建一个excel workbook对象</span><br><span class="line">book &#x3D; openpyxl.Workbook()</span><br><span class="line"># 产生一个sheet</span><br><span class="line">sh &#x3D; book.active</span><br><span class="line"># 修改当前sheet标题为 漏洞数据信息表</span><br><span class="line">sh.title &#x3D; &#39;特殊文本信息表&#39;</span><br><span class="line"># 根据名称获取某个sheet对象</span><br><span class="line">sh &#x3D; book[&#39;特殊文本信息表&#39;]</span><br><span class="line"></span><br><span class="line"># 标记</span><br><span class="line">flag &#x3D; 1</span><br><span class="line"># 导入我们的xlsx文件</span><br><span class="line">wb &#x3D; openpyxl.load_workbook(&quot;特殊文本.xlsx&quot;)</span><br><span class="line"></span><br><span class="line"># 打开具体的某一个表</span><br><span class="line">ws &#x3D; wb.get_sheet_by_name(&quot;特殊文本信息表&quot;)</span><br><span class="line"></span><br><span class="line"># cve列</span><br><span class="line">cve_column &#x3D; ws[&#39;A&#39;]</span><br><span class="line"></span><br><span class="line"># 特殊文本列</span><br><span class="line">des_column &#x3D; ws[&#39;B&#39;]</span><br><span class="line"></span><br><span class="line"># 定义一个字典</span><br><span class="line">new_dic &#x3D; dict()</span><br><span class="line"></span><br><span class="line"># 将excel文件中的每一对数据都放到字典中</span><br><span class="line">for i in range(len(cve_column)):</span><br><span class="line">    new_dic[str(cve_column[i].value)] &#x3D; des_column[i].value</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">values&#x3D;set()</span><br><span class="line">for key in list(new_dic.keys()):</span><br><span class="line">    val &#x3D; new_dic[key]</span><br><span class="line">    if val in values: </span><br><span class="line">        del new_dic[key]</span><br><span class="line">    else:</span><br><span class="line">        values.add(val)</span><br><span class="line"></span><br><span class="line">for key,value in new_dic.items():</span><br><span class="line">    sh[&#39;A&#39; + str(flag)] &#x3D; key</span><br><span class="line">    sh[&#39;B&#39; + str(flag)] &#x3D; value</span><br><span class="line">    flag &#x3D; flag + 1</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">book.save(&quot;已去重Cnvd特殊文本.xlsx&quot;)</span><br><span class="line">print(&quot;---运行结束---&quot;)</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/python%E2%80%94%E2%80%94%E6%8F%90%E5%8F%96%E6%BC%8F%E6%B4%9E%E6%8F%8F%E8%BF%B0%E4%B8%AD%E6%9C%89%E4%BA%89%E8%AE%AE%E7%9A%84%E6%95%B0%E6%8D%AE.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/python%E2%80%94%E2%80%94%E5%8E%BB%E9%99%A4%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9B%B8%E5%90%8C%E5%80%BC%E7%9A%84%E9%A1%B9.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Xidian_logo.png">
-      <meta itemprop="name" content="Justin">
-      <meta itemprop="description" content="生活与代码记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Faith&Passion">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/python%E2%80%94%E2%80%94%E5%8E%BB%E9%99%A4%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9B%B8%E5%90%8C%E5%80%BC%E7%9A%84%E9%A1%B9.html" class="post-title-link" itemprop="url">python——去除字典中相同值的项</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-05-13 18:37:07 / 修改时间：18:43:01" itemprop="dateCreated datePublished" datetime="2020-05-13T18:37:07+08:00">2020-05-13</time>
-            </span>
-
-          
-            <span id="/python%E2%80%94%E2%80%94%E5%8E%BB%E9%99%A4%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9B%B8%E5%90%8C%E5%80%BC%E7%9A%84%E9%A1%B9.html" class="post-meta-item leancloud_visitors" data-flag-title="python——去除字典中相同值的项" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/python%E2%80%94%E2%80%94%E5%8E%BB%E9%99%A4%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9B%B8%E5%90%8C%E5%80%BC%E7%9A%84%E9%A1%B9.html#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/python%E2%80%94%E2%80%94%E5%8E%BB%E9%99%A4%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9B%B8%E5%90%8C%E5%80%BC%E7%9A%84%E9%A1%B9.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>这里的去除，并不单单指的是删除值，而是把这个键值对都删了，只保留相同值的第一个</p>
-<h4 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建一个集合</span></span><br><span class="line">values=set()</span><br><span class="line"><span class="comment"># 将字典所有的 键 转换为列表，并进行遍历</span></span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> list(new_dic.keys()):</span><br><span class="line">    <span class="comment"># 将每一个键的值取出来赋给val</span></span><br><span class="line">    val = new_dic[key]</span><br><span class="line">    <span class="comment"># 如何取出的值在集合里，就把键值对删掉</span></span><br><span class="line">    <span class="keyword">if</span> val <span class="keyword">in</span> values: </span><br><span class="line">        <span class="keyword">del</span> new_dic[key]</span><br><span class="line">    <span class="comment"># 如果不在，就把这个值添加到集合中去   </span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        values.add(val)</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/python%E2%80%94%E2%80%94%E5%8E%BB%E9%99%A4%E5%AD%97%E5%85%B8%E4%B8%AD%E7%9B%B8%E5%90%8C%E5%80%BC%E7%9A%84%E9%A1%B9.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1163,14 +1171,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">114</span>
+          <span class="site-state-item-count">118</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-count">25</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
