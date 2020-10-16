@@ -186,6 +186,283 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A017%E2%80%94%E2%80%94CSS%E8%83%8C%E6%99%AF.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Xidian_logo.png">
+      <meta itemprop="name" content="Justin">
+      <meta itemprop="description" content="生活与代码记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Faith&Passion">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A017%E2%80%94%E2%80%94CSS%E8%83%8C%E6%99%AF.html" class="post-title-link" itemprop="url">前端知识学习17——CSS背景</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-05-27 21:49:00 / 修改时间：22:07:03" itemprop="dateCreated datePublished" datetime="2020-05-27T21:49:00+08:00">2020-05-27</time>
+            </span>
+
+          
+            <span id="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A017%E2%80%94%E2%80%94CSS%E8%83%8C%E6%99%AF.html" class="post-meta-item leancloud_visitors" data-flag-title="前端知识学习17——CSS背景" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A017%E2%80%94%E2%80%94CSS%E8%83%8C%E6%99%AF.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A017%E2%80%94%E2%80%94CSS%E8%83%8C%E6%99%AF.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="1-背景图片"><a href="#1-背景图片" class="headerlink" title="1.背景图片"></a>1.背景图片</h2><ul>
+<li>backgroud-image<br><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200527214955.png" alt></li>
+</ul>
+<h2 id="2-背景平铺"><a href="#2-背景平铺" class="headerlink" title="2.背景平铺"></a>2.背景平铺</h2><ul>
+<li>backgroud-repeat<br><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200527215028.png" alt><h2 id="3-背景图片位置"><a href="#3-背景图片位置" class="headerlink" title="3.背景图片位置"></a>3.背景图片位置</h2></li>
+<li>background-positon<br><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200527215047.png" alt><br><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200527215130.png" alt><blockquote>
+<p>使用img标签难以控制位置，使用背景图片便于掌控位置</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="4-文字图片小案例"><a href="#4-文字图片小案例" class="headerlink" title="4.文字图片小案例"></a>4.文字图片小案例</h2><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">        h3 &#123;</span><br><span class="line">            width: 170px;</span><br><span class="line">            height: 40px;</span><br><span class="line">            background-image: url(images/icon.png);</span><br><span class="line">            background-repeat: no-repeat;</span><br><span class="line">            text-indent: 4em;</span><br><span class="line">            background-position: left;</span><br><span class="line">            line-height: 40px;</span><br><span class="line">            font-weight: normal;</span><br><span class="line">            font-size: 14px;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span></span><br><span class="line">        成长守护平台  </span><br><span class="line">    <span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h3><p><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200527215335.png" alt></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A017%E2%80%94%E2%80%94CSS%E8%83%8C%E6%99%AF.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A016%E2%80%94%E2%80%94%E5%8D%95%E8%A1%8C%E6%96%87%E5%AD%97%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Xidian_logo.png">
+      <meta itemprop="name" content="Justin">
+      <meta itemprop="description" content="生活与代码记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Faith&Passion">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A016%E2%80%94%E2%80%94%E5%8D%95%E8%A1%8C%E6%96%87%E5%AD%97%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD.html" class="post-title-link" itemprop="url">前端知识学习16——单行文字垂直居中</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-05-26 10:52:36 / 修改时间：10:54:42" itemprop="dateCreated datePublished" datetime="2020-05-26T10:52:36+08:00">2020-05-26</time>
+            </span>
+
+          
+            <span id="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A016%E2%80%94%E2%80%94%E5%8D%95%E8%A1%8C%E6%96%87%E5%AD%97%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD.html" class="post-meta-item leancloud_visitors" data-flag-title="前端知识学习16——单行文字垂直居中" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A016%E2%80%94%E2%80%94%E5%8D%95%E8%A1%8C%E6%96%87%E5%AD%97%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A016%E2%80%94%E2%80%94%E5%8D%95%E8%A1%8C%E6%96%87%E5%AD%97%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="理论基础"><a href="#理论基础" class="headerlink" title="理论基础"></a>理论基础</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">行高 &#x3D; 上边距 + 文字高度 + 下边距</span><br></pre></td></tr></table></figure>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">行高 &#x3D; 盒子的高度</span><br></pre></td></tr></table></figure>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200526105424.png" alt><br><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200526105434.png" alt></p>
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A016%E2%80%94%E2%80%94%E5%8D%95%E8%A1%8C%E6%96%87%E5%AD%97%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A015%E2%80%94%E2%80%94%E7%AE%80%E7%89%88%E5%B0%8F%E7%B1%B3%E4%BE%A7%E8%BE%B9%E6%A0%8F%E7%9A%84%E5%AE%9E%E7%8E%B0.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Xidian_logo.png">
+      <meta itemprop="name" content="Justin">
+      <meta itemprop="description" content="生活与代码记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Faith&Passion">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A015%E2%80%94%E2%80%94%E7%AE%80%E7%89%88%E5%B0%8F%E7%B1%B3%E4%BE%A7%E8%BE%B9%E6%A0%8F%E7%9A%84%E5%AE%9E%E7%8E%B0.html" class="post-title-link" itemprop="url">前端知识学习15——简版小米侧边栏的实现</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-05-26 10:50:42 / 修改时间：10:52:07" itemprop="dateCreated datePublished" datetime="2020-05-26T10:50:42+08:00">2020-05-26</time>
+            </span>
+
+          
+            <span id="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A015%E2%80%94%E2%80%94%E7%AE%80%E7%89%88%E5%B0%8F%E7%B1%B3%E4%BE%A7%E8%BE%B9%E6%A0%8F%E7%9A%84%E5%AE%9E%E7%8E%B0.html" class="post-meta-item leancloud_visitors" data-flag-title="前端知识学习15——简版小米侧边栏的实现" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A015%E2%80%94%E2%80%94%E7%AE%80%E7%89%88%E5%B0%8F%E7%B1%B3%E4%BE%A7%E8%BE%B9%E6%A0%8F%E7%9A%84%E5%AE%9E%E7%8E%B0.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A015%E2%80%94%E2%80%94%E7%AE%80%E7%89%88%E5%B0%8F%E7%B1%B3%E4%BE%A7%E8%BE%B9%E6%A0%8F%E7%9A%84%E5%AE%9E%E7%8E%B0.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">        a &#123;</span><br><span class="line"><span class="css">            <span class="comment">/* 转换为块级元素 */</span></span></span><br><span class="line">            display: block;</span><br><span class="line">            text-decoration: none;</span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-id">#535759</span>;</span></span><br><span class="line">            color: white;</span><br><span class="line">            width: 210px;</span><br><span class="line">            height: 40px;</span><br><span class="line">            font-size: 14px;</span><br><span class="line">            text-indent: 2em;</span><br><span class="line">            line-height: 40px;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-id">#ff6f00</span>;</span></span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>手机 电话卡<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>电视 盒子<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>笔记本 平板<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>出行 穿戴<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>智能 路由器<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>健康 儿童<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>耳机 音响<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h2><p><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200526105157.png" alt></p>
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A015%E2%80%94%E2%80%94%E7%AE%80%E7%89%88%E5%B0%8F%E7%B1%B3%E4%BE%A7%E8%BE%B9%E6%A0%8F%E7%9A%84%E5%AE%9E%E7%8E%B0.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A014%E2%80%94%E2%80%94CSS%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -828,285 +1105,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/python%E2%80%94%E2%80%94%E8%BE%93%E5%87%BA%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Xidian_logo.png">
-      <meta itemprop="name" content="Justin">
-      <meta itemprop="description" content="生活与代码记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Faith&Passion">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/python%E2%80%94%E2%80%94%E8%BE%93%E5%87%BA%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93.html" class="post-title-link" itemprop="url">python——输出方式总结</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-05-24 18:33:56 / 修改时间：18:36:23" itemprop="dateCreated datePublished" datetime="2020-05-24T18:33:56+08:00">2020-05-24</time>
-            </span>
-
-          
-            <span id="/python%E2%80%94%E2%80%94%E8%BE%93%E5%87%BA%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93.html" class="post-meta-item leancloud_visitors" data-flag-title="python——输出方式总结" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/python%E2%80%94%E2%80%94%E8%BE%93%E5%87%BA%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93.html#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/python%E2%80%94%E2%80%94%E8%BE%93%E5%87%BA%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="python输出方式总结"><a href="#python输出方式总结" class="headerlink" title="python输出方式总结"></a>python输出方式总结</h2><h3 id="1-使用-的方式-特点：一一对应"><a href="#1-使用-的方式-特点：一一对应" class="headerlink" title="1.使用 % 的方式  特点：一一对应"></a>1.使用 % 的方式  特点：一一对应</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"努力学习%s,努力工作%s"</span> %(<span class="string">"11"</span>,<span class="string">"22"</span>))</span><br></pre></td></tr></table></figure>
-<h3 id="2-使用format方法"><a href="#2-使用format方法" class="headerlink" title="2.使用format方法"></a>2.使用format方法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 2.1 默认顺序替换，按照默认顺序进行 一一对应</span></span><br><span class="line">print(<span class="string">"&#123;&#125;提高生产力,&#123;&#125;提高能力"</span>.format(<span class="string">"pyhton"</span>,<span class="string">"python"</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.2 进行数字替换 0里面填的是666   1里面填的是888</span></span><br><span class="line">print(<span class="string">"&#123;1&#125;提高生产力,&#123;0&#125;提高能力"</span>.format(<span class="string">"666"</span>,<span class="string">"888"</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.3 进行字符替换</span></span><br><span class="line">print(<span class="string">"&#123;a&#125;自律，&#123;b&#125;自强，&#123;c&#125;努力"</span>.format(a = <span class="string">"王五"</span> , b= <span class="string">"张三"</span> , c = <span class="string">"李四"</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.4 打印组合类型（列表等）</span></span><br><span class="line">listx = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">print(<span class="string">"这是一个列表:&#123;&#125;"</span>.format(listx))</span><br><span class="line"><span class="comment"># 打印列表中的某一项</span></span><br><span class="line">print(<span class="string">"列表中的第三项：&#123;&#125;"</span>.format(listx[<span class="number">2</span>]))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.5 调用函数</span></span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="comment"># 函数要赋值给一个变量，让这个变量去调用</span></span><br><span class="line">print(<span class="string">"π的值是：&#123;a.pi&#125;"</span>.format(a = math))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.6 精度控制</span></span><br><span class="line">print(<span class="string">"π的小数点后三位是：&#123;:.3f&#125;"</span>.format(math.pi))</span><br></pre></td></tr></table></figure>
-<h3 id="输出效果："><a href="#输出效果：" class="headerlink" title="输出效果："></a>输出效果：</h3><p><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200524183558.png" alt></p>
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/python%E2%80%94%E2%80%94%E8%BE%93%E5%87%BA%E6%96%B9%E5%BC%8F%E6%80%BB%E7%BB%93.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/python%E2%80%94%E2%80%94%E9%9B%86%E5%90%88.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Xidian_logo.png">
-      <meta itemprop="name" content="Justin">
-      <meta itemprop="description" content="生活与代码记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Faith&Passion">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/python%E2%80%94%E2%80%94%E9%9B%86%E5%90%88.html" class="post-title-link" itemprop="url">python——集合</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-05-24 12:56:17 / 修改时间：19:15:54" itemprop="dateCreated datePublished" datetime="2020-05-24T12:56:17+08:00">2020-05-24</time>
-            </span>
-
-          
-            <span id="/python%E2%80%94%E2%80%94%E9%9B%86%E5%90%88.html" class="post-meta-item leancloud_visitors" data-flag-title="python——集合" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/python%E2%80%94%E2%80%94%E9%9B%86%E5%90%88.html#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/python%E2%80%94%E2%80%94%E9%9B%86%E5%90%88.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="集合的两种创建方式"><a href="#集合的两种创建方式" class="headerlink" title="集合的两种创建方式"></a>集合的两种创建方式</h2><p><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200524125715.png" alt></p>
-<ul>
-<li>集合是无序的</li>
-<li>集合里面相同的元素只保留一个</li>
-<li>set会将字符串进行分开保存<h2 id="集合的基本操作符"><a href="#集合的基本操作符" class="headerlink" title="集合的基本操作符"></a>集合的基本操作符</h2><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200524161237.png" alt></li>
-</ul>
-<h2 id="利用集合进行数据去重"><a href="#利用集合进行数据去重" class="headerlink" title="利用集合进行数据去重"></a>利用集合进行数据去重</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 利用集合进行数据去重</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义一个带有重复元素的列表</span></span><br><span class="line">list_1 = [<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">5</span>]</span><br><span class="line"><span class="comment"># 将这个列表变成一个集合</span></span><br><span class="line">set_1 = set(list_1)</span><br><span class="line"><span class="comment"># 再将集合变成列表  这样一来一回，就实现了去重操作</span></span><br><span class="line">new_list = list(set_1)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"去重后的列表是：&#123;&#125;"</span>.format(new_list))</span><br></pre></td></tr></table></figure>
-<p><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200524191542.png" alt></p>
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/python%E2%80%94%E2%80%94%E9%9B%86%E5%90%88.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%BF%AB%E9%80%9F%E5%88%A4%E6%96%AD%E5%88%97%E8%A1%A8%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Xidian_logo.png">
-      <meta itemprop="name" content="Justin">
-      <meta itemprop="description" content="生活与代码记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Faith&Passion">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E5%BF%AB%E9%80%9F%E5%88%A4%E6%96%AD%E5%88%97%E8%A1%A8%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA.html" class="post-title-link" itemprop="url">快速判断列表是否为空</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-05-23 19:01:45 / 修改时间：19:04:15" itemprop="dateCreated datePublished" datetime="2020-05-23T19:01:45+08:00">2020-05-23</time>
-            </span>
-
-          
-            <span id="/%E5%BF%AB%E9%80%9F%E5%88%A4%E6%96%AD%E5%88%97%E8%A1%A8%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA.html" class="post-meta-item leancloud_visitors" data-flag-title="快速判断列表是否为空" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/%E5%BF%AB%E9%80%9F%E5%88%A4%E6%96%AD%E5%88%97%E8%A1%A8%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA.html#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/%E5%BF%AB%E9%80%9F%E5%88%A4%E6%96%AD%E5%88%97%E8%A1%A8%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>今天在写爬虫的时候，需要判断列表是否为空，这个有时候很重要。</p>
-<h2 id="切入正题"><a href="#切入正题" class="headerlink" title="切入正题"></a>切入正题</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bool(len(list_name) == <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-<p>如果结果是True，那说明是空列表</p>
-
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/%E5%BF%AB%E9%80%9F%E5%88%A4%E6%96%AD%E5%88%97%E8%A1%A8%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1174,14 +1176,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">118</span>
+          <span class="site-state-item-count">121</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-count">27</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
