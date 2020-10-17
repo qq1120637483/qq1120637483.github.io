@@ -74,9 +74,6 @@
   </style>
 </noscript>
 
-<link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
-<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
-<script src="\assets\js\Meting.min.js" class="meting-script-marker"></script>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -185,6 +182,96 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A030%E2%80%94%E2%80%94%E6%B7%98%E5%AE%9D%E7%84%A6%E7%82%B9%E5%9B%BE%E5%B8%83%E5%B1%80.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Xidian_logo.png">
+      <meta itemprop="name" content="Justin">
+      <meta itemprop="description" content="生活与代码记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Faith&Passion">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A030%E2%80%94%E2%80%94%E6%B7%98%E5%AE%9D%E7%84%A6%E7%82%B9%E5%9B%BE%E5%B8%83%E5%B1%80.html" class="post-title-link" itemprop="url">前端知识学习30——淘宝焦点图布局</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-09-26 17:36:54 / 修改时间：17:51:53" itemprop="dateCreated datePublished" datetime="2020-09-26T17:36:54+08:00">2020-09-26</time>
+            </span>
+
+          
+            <span id="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A030%E2%80%94%E2%80%94%E6%B7%98%E5%AE%9D%E7%84%A6%E7%82%B9%E5%9B%BE%E5%B8%83%E5%B1%80.html" class="post-meta-item leancloud_visitors" data-flag-title="前端知识学习30——淘宝焦点图布局" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A030%E2%80%94%E2%80%94%E6%B7%98%E5%AE%9D%E7%84%A6%E7%82%B9%E5%9B%BE%E5%B8%83%E5%B1%80.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A030%E2%80%94%E2%80%94%E6%B7%98%E5%AE%9D%E7%84%A6%E7%82%B9%E5%9B%BE%E5%B8%83%E5%B1%80.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="1：布局分析"><a href="#1：布局分析" class="headerlink" title="1：布局分析"></a>1：布局分析</h2><p><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200926173758.png" alt></p>
+<h2 id="2：代码"><a href="#2：代码" class="headerlink" title="2：代码"></a>2：代码</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">        * &#123;</span><br><span class="line">            margin: 0;</span><br><span class="line">            padding: 0;</span><br><span class="line">        &#125;</span><br><span class="line">        li &#123;</span><br><span class="line">            list-style: none;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-class">.tb-promo</span> &#123;</span></span><br><span class="line">            position: relative;</span><br><span class="line">            width: 520px;</span><br><span class="line">            height: 280px;</span><br><span class="line">            background-color: aqua;</span><br><span class="line">            margin: 100px auto;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-class">.prev</span> &#123;</span></span><br><span class="line">            position: absolute;</span><br><span class="line">            left: 0;</span><br><span class="line">            top: 50%;</span><br><span class="line">            width: 20px;</span><br><span class="line">            height: 30px;</span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-tag">rgba</span>(0,0,0,0<span class="selector-class">.3</span>);</span></span><br><span class="line">            margin-top: -15px;</span><br><span class="line">            text-align: center;</span><br><span class="line">            line-height: 30px;</span><br><span class="line">            text-decoration: none;</span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#fff</span>;</span></span><br><span class="line">            border-top-right-radius: 15px;</span><br><span class="line">            border-bottom-right-radius: 15px;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-class">.next</span> &#123;</span></span><br><span class="line">            position: absolute;</span><br><span class="line">            right: 0;</span><br><span class="line">            top: 50%;</span><br><span class="line">            width: 20px;</span><br><span class="line">            height: 30px;</span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-tag">rgba</span>(0,0,0,0<span class="selector-class">.3</span>);</span></span><br><span class="line">            margin-top: -15px;</span><br><span class="line">            text-align: center;</span><br><span class="line">            line-height: 30px;</span><br><span class="line">            text-decoration: none;</span><br><span class="line"><span class="css">            <span class="selector-tag">color</span>: <span class="selector-id">#fff</span>;</span></span><br><span class="line">            border-top-left-radius: 15px;</span><br><span class="line">            border-bottom-left-radius: 15px;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-class">.promo-nav</span> &#123;</span></span><br><span class="line">            position: absolute;</span><br><span class="line">            bottom: 15px;</span><br><span class="line">            left: 50%;</span><br><span class="line">            background-color: aqua;</span><br><span class="line">            width: 70px;</span><br><span class="line">            height: 13px;</span><br><span class="line">            margin-left: -35px;</span><br><span class="line"><span class="css">            <span class="comment">/*白色半透明*/</span></span></span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-tag">rgba</span>(255,255,255,0<span class="selector-class">.3</span>);</span></span><br><span class="line">            border-radius: 7px;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-class">.promo-nav</span> <span class="selector-tag">li</span> &#123;</span></span><br><span class="line">            float: left;</span><br><span class="line">            width: 8px;</span><br><span class="line">            height: 8px;</span><br><span class="line"><span class="css">            <span class="selector-tag">background-color</span>: <span class="selector-id">#fff</span>;</span></span><br><span class="line">            border-radius: 50%;</span><br><span class="line">            margin: 3px;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-class">.promo-nav</span> <span class="selector-class">.selected</span> &#123;</span></span><br><span class="line">            background-color: orange;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 大盒子 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"tb-promo"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/爱上潮流名店.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 左侧按钮 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"prev"</span>&gt;</span> <span class="symbol">&amp;lt;</span> <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 右侧按钮 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"next"</span>&gt;</span> <span class="symbol">&amp;gt;</span> <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 小圆点 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"promo-nav"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"selected"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="3：示例图"><a href="#3：示例图" class="headerlink" title="3：示例图"></a>3：示例图</h2><p><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20200926173939.png" alt></p>
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A030%E2%80%94%E2%80%94%E6%B7%98%E5%AE%9D%E7%84%A6%E7%82%B9%E5%9B%BE%E5%B8%83%E5%B1%80.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -1008,103 +1095,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E6%AD%8C%E5%8D%95%E6%B5%8B%E8%AF%95.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Xidian_logo.png">
-      <meta itemprop="name" content="Justin">
-      <meta itemprop="description" content="生活与代码记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Faith&Passion">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E6%AD%8C%E5%8D%95%E6%B5%8B%E8%AF%95.html" class="post-title-link" itemprop="url">歌单测试</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-06-19 17:40:54 / 修改时间：18:11:20" itemprop="dateCreated datePublished" datetime="2020-06-19T17:40:54+08:00">2020-06-19</time>
-            </span>
-
-          
-            <span id="/%E6%AD%8C%E5%8D%95%E6%B5%8B%E8%AF%95.html" class="post-meta-item leancloud_visitors" data-flag-title="歌单测试" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/%E6%AD%8C%E5%8D%95%E6%B5%8B%E8%AF%95.html#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/%E6%AD%8C%E5%8D%95%E6%B5%8B%E8%AF%95.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<p>采用的是meting的方式</p>
-</blockquote>
-<h2 id="1：百度-id"><a href="#1：百度-id" class="headerlink" title="1：百度 + id"></a>1：百度 + id</h2>
-    <div id="aplayer-WifvwyOX" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="677026134" data-server="baidu" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
-<p><a href="http://music.taihe.com/" target="_blank" rel="noopener">百度音乐网址</a></p>
-<h2 id="2：网易-歌单"><a href="#2：网易-歌单" class="headerlink" title="2：网易 + 歌单"></a>2：网易 + 歌单</h2>
-    <div id="aplayer-MJfenQbw" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="60198" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
-<p><a href="https://music.163.com/" target="_blank" rel="noopener">网易云音乐</a></p>
-<h2 id="3：网易-id"><a href="#3：网易-id" class="headerlink" title="3：网易 + id"></a>3：网易 + id</h2>
-    <div id="aplayer-GhoWzJxW" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="1325711221" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/%E6%AD%8C%E5%8D%95%E6%B5%8B%E8%AF%95.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1176,7 +1166,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">121</span>
+          <span class="site-state-item-count">122</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
