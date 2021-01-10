@@ -186,6 +186,202 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Xidian_logo.png">
+      <meta itemprop="name" content="Justin">
+      <meta itemprop="description" content="生活与代码记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Faith&Passion">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.html" class="post-title-link" itemprop="url">插入排序</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-10-09 14:31:19 / 修改时间：14:51:34" itemprop="dateCreated datePublished" datetime="2020-10-09T14:31:19+08:00">2020-10-09</time>
+            </span>
+
+          
+            <span id="/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.html" class="post-meta-item leancloud_visitors" data-flag-title="插入排序" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="插入排序的核心思想"><a href="#插入排序的核心思想" class="headerlink" title="插入排序的核心思想"></a>插入排序的核心思想</h2><p>1：从第二个元素开始依次进行遍历，假设前面的元素已经是有序的。<br>2：第i个元素和第i-1个元素进行比较，如果第i个元素比较小，就对两者进行交换位置。<br>3：交换完之后，继续和前面的进行比较，直到遇到比自己小的元素，停止交换。</p>
+<blockquote>
+<p>推荐参考 网络版代码</p>
+</blockquote>
+<h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><p>最优时间复杂度：O(N)<br>最坏时间复杂度：O(N^2)</p>
+<h2 id="代码（网络版）"><a href="#代码（网络版）" class="headerlink" title="代码（网络版）"></a>代码（网络版）</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">实现思路：</span></span><br><span class="line"><span class="string">        1：从第二个元素开始遍历列表</span></span><br><span class="line"><span class="string">        2：i 代表的是元素的下标</span></span><br><span class="line"><span class="string">        3：当i大于0的时候进入循环</span></span><br><span class="line"><span class="string">        4：如果后边的元素小于前面的元素，就进行交换元素</span></span><br><span class="line"><span class="string">        5：下标前移，继续判断下标所在元素和下标前面的那个元素</span></span><br><span class="line"><span class="string">        重要：python中如何实现交换两个元素</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="comment"># 定义插入排序函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">insert_sort</span><span class="params">(data)</span>:</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 从第二个元素开始遍历列表</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,len(data)):</span><br><span class="line">        <span class="comment"># 这里的i是下标</span></span><br><span class="line">        <span class="keyword">while</span> i &gt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">if</span> data[i] &lt; data[i<span class="number">-1</span>]:</span><br><span class="line">                data[i],data[i<span class="number">-1</span>] = data[i<span class="number">-1</span>],data[i]</span><br><span class="line">                i = i - <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">return</span> data</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    </span><br><span class="line">    L1 = [<span class="number">54</span>, <span class="number">26</span>, <span class="number">93</span>, <span class="number">17</span>, <span class="number">77</span>, <span class="number">31</span>, <span class="number">17</span>, <span class="number">55</span>, <span class="number">20</span>]</span><br><span class="line">    print(<span class="string">"排序前: "</span>, L1)</span><br><span class="line">    insert_sort(L1)</span><br><span class="line">    print(<span class="string">'排序后: '</span>, L1)</span><br></pre></td></tr></table></figure>
+
+<h2 id="代码（自己写的）"><a href="#代码（自己写的）" class="headerlink" title="代码（自己写的）"></a>代码（自己写的）</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="comment"># 定义插入排序函数</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">思路总结：</span></span><br><span class="line"><span class="string">        1：遍历列表里的每一个下标</span></span><br><span class="line"><span class="string">        2：从下标获得值，并赋值给临时变量x</span></span><br><span class="line"><span class="string">        3：创建一个新的列表，这个列表用来存放临时变量x值前面的序号</span></span><br><span class="line"><span class="string">        4：如果序号大于0，倒着遍历上面获取的序号的值</span></span><br><span class="line"><span class="string">        5：如果大于临时变量后移1个，把临时变量放到后移的那个元素的位置，直到不大于临时变量</span></span><br><span class="line"><span class="string">        重要：python中如何实现列表倒序遍历</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">insert_sort</span><span class="params">(data)</span>:</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 遍历列表里的每一个值  复制给一个临时变量x</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(data)):</span><br><span class="line">        <span class="comment"># 此时的i就是列表的下标  x就是赋值给的临时变量</span></span><br><span class="line">        x = data[i]</span><br><span class="line">        <span class="comment"># 这个列表存放 x前面值的序号</span></span><br><span class="line">        list1 = []</span><br><span class="line">        <span class="comment"># 寻找插入位置  将其他元素后移        </span></span><br><span class="line">        <span class="keyword">if</span> i &gt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>,i):</span><br><span class="line">                list1.append(j)</span><br><span class="line">            <span class="keyword">for</span> v <span class="keyword">in</span> list1[::<span class="number">-1</span>]:</span><br><span class="line">                <span class="keyword">if</span> data[v] &gt; x:</span><br><span class="line">                    data[v+<span class="number">1</span>] = data[v]</span><br><span class="line">                    data[v] = x</span><br><span class="line">    <span class="keyword">return</span> data</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    </span><br><span class="line">    L1 = [<span class="number">54</span>, <span class="number">26</span>, <span class="number">93</span>, <span class="number">17</span>, <span class="number">77</span>, <span class="number">31</span>, <span class="number">17</span>, <span class="number">55</span>, <span class="number">20</span>]</span><br><span class="line">    print(<span class="string">"排序前: "</span>, L1)</span><br><span class="line">    insert_sort(L1)</span><br><span class="line">    print(<span class="string">'排序后: '</span>, L1)</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A040%E2%80%94%E2%80%94Html5%E6%96%B0%E7%89%B9%E6%80%A7.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Xidian_logo.png">
+      <meta itemprop="name" content="Justin">
+      <meta itemprop="description" content="生活与代码记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Faith&Passion">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A040%E2%80%94%E2%80%94Html5%E6%96%B0%E7%89%B9%E6%80%A7.html" class="post-title-link" itemprop="url">前端知识学习40——Html5新特性</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-10-05 16:57:13 / 修改时间：17:09:25" itemprop="dateCreated datePublished" datetime="2020-10-05T16:57:13+08:00">2020-10-05</time>
+            </span>
+
+          
+            <span id="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A040%E2%80%94%E2%80%94Html5%E6%96%B0%E7%89%B9%E6%80%A7.html" class="post-meta-item leancloud_visitors" data-flag-title="前端知识学习40——Html5新特性" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A040%E2%80%94%E2%80%94Html5%E6%96%B0%E7%89%B9%E6%80%A7.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A040%E2%80%94%E2%80%94Html5%E6%96%B0%E7%89%B9%E6%80%A7.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="1：新增语义化标签"><a href="#1：新增语义化标签" class="headerlink" title="1：新增语义化标签"></a>1：新增语义化标签</h2><p><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20201005165759.png" alt></p>
+<h2 id="2：新增视频标签"><a href="#2：新增视频标签" class="headerlink" title="2：新增视频标签"></a>2：新增视频标签</h2><h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
+<li><p>1：尽量使用mp4格式</p>
+</li>
+<li><p>2：假如给video标签设置宽高不起作用的话，可以给其设置一个父盒子，然后给父盒子指定宽高。</p>
+<h3 id="常见属性"><a href="#常见属性" class="headerlink" title="常见属性"></a>常见属性</h3><p><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20201005165932.png" alt></p>
+</li>
+<li><p>谷歌浏览器的自动播放被禁了，要想自动播放必须加上muted属性，也就是说必须静音播放。</p>
+</li>
+<li><p>poster属性是当用户在进行加载等待的时候显示的画面。</p>
+</li>
+<li><p>controls是显示控件</p>
+</li>
+</ul>
+<h2 id="3：新增音频标签（audio）"><a href="#3：新增音频标签（audio）" class="headerlink" title="3：新增音频标签（audio）"></a>3：新增音频标签（audio）</h2><p><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20201005170237.png" alt></p>
+<h2 id="4：新增input属性"><a href="#4：新增input属性" class="headerlink" title="4：新增input属性"></a>4：新增input属性</h2><p>下列的属性必须放在form表单中。<br><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20201005170315.png" alt><br><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20201005170336.png" alt></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A040%E2%80%94%E2%80%94Html5%E6%96%B0%E7%89%B9%E6%80%A7.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A039%E2%80%94%E2%80%94CSS%E7%BB%98%E5%88%B6%E6%A2%AF%E5%BD%A2.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -936,199 +1132,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Word%E4%B8%AD%E6%9C%89%E5%BA%8F%E7%BC%96%E5%8F%B7%E7%AC%AC%E4%BA%8C%E8%A1%8C%E9%A1%B6%E6%A0%BC%E7%9A%84%E8%AE%BE%E7%BD%AE%E6%96%B9%E6%B3%95.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Xidian_logo.png">
-      <meta itemprop="name" content="Justin">
-      <meta itemprop="description" content="生活与代码记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Faith&Passion">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/Word%E4%B8%AD%E6%9C%89%E5%BA%8F%E7%BC%96%E5%8F%B7%E7%AC%AC%E4%BA%8C%E8%A1%8C%E9%A1%B6%E6%A0%BC%E7%9A%84%E8%AE%BE%E7%BD%AE%E6%96%B9%E6%B3%95.html" class="post-title-link" itemprop="url">Word中有序编号第二行顶格的设置方法</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-10-04 10:25:40 / 修改时间：10:31:30" itemprop="dateCreated datePublished" datetime="2020-10-04T10:25:40+08:00">2020-10-04</time>
-            </span>
-
-          
-            <span id="/Word%E4%B8%AD%E6%9C%89%E5%BA%8F%E7%BC%96%E5%8F%B7%E7%AC%AC%E4%BA%8C%E8%A1%8C%E9%A1%B6%E6%A0%BC%E7%9A%84%E8%AE%BE%E7%BD%AE%E6%96%B9%E6%B3%95.html" class="post-meta-item leancloud_visitors" data-flag-title="Word中有序编号第二行顶格的设置方法" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/Word%E4%B8%AD%E6%9C%89%E5%BA%8F%E7%BC%96%E5%8F%B7%E7%AC%AC%E4%BA%8C%E8%A1%8C%E9%A1%B6%E6%A0%BC%E7%9A%84%E8%AE%BE%E7%BD%AE%E6%96%B9%E6%B3%95.html#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/Word%E4%B8%AD%E6%9C%89%E5%BA%8F%E7%BC%96%E5%8F%B7%E7%AC%AC%E4%BA%8C%E8%A1%8C%E9%A1%B6%E6%A0%BC%E7%9A%84%E8%AE%BE%E7%BD%AE%E6%96%B9%E6%B3%95.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="如何让word中有序编号第二行顶格？"><a href="#如何让word中有序编号第二行顶格？" class="headerlink" title="如何让word中有序编号第二行顶格？"></a>如何让word中有序编号第二行顶格？</h2><p>效果图如下：<br><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20201004102827.png" alt></p>
-<h2 id="解决步骤"><a href="#解决步骤" class="headerlink" title="解决步骤"></a>解决步骤</h2><ul>
-<li>1：选中相关文本，点击 调整列表缩进</li>
-</ul>
-<p><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20201004102930.png" alt></p>
-<ul>
-<li>2：将文本缩进置为0</li>
-</ul>
-<p><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20201004103037.png" alt></p>
-<h3 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h3><p><a href="https://www.jianshu.com/p/9e9f547e65b2" target="_blank" rel="noopener">Word技巧：如何让带编号的段落第二行顶头排版？</a></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Word%E4%B8%AD%E6%9C%89%E5%BA%8F%E7%BC%96%E5%8F%B7%E7%AC%AC%E4%BA%8C%E8%A1%8C%E9%A1%B6%E6%A0%BC%E7%9A%84%E8%AE%BE%E7%BD%AE%E6%96%B9%E6%B3%95.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A032%E2%80%94%E2%80%94%E7%B2%BE%E7%81%B5%E5%9B%BE..html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Xidian_logo.png">
-      <meta itemprop="name" content="Justin">
-      <meta itemprop="description" content="生活与代码记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Faith&Passion">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A032%E2%80%94%E2%80%94%E7%B2%BE%E7%81%B5%E5%9B%BE..html" class="post-title-link" itemprop="url">前端知识学习32——精灵图.</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-10-01 21:30:16" itemprop="dateCreated datePublished" datetime="2020-10-01T21:30:16+08:00">2020-10-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-10-05 11:44:03" itemprop="dateModified" datetime="2020-10-05T11:44:03+08:00">2020-10-05</time>
-              </span>
-
-          
-            <span id="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A032%E2%80%94%E2%80%94%E7%B2%BE%E7%81%B5%E5%9B%BE..html" class="post-meta-item leancloud_visitors" data-flag-title="前端知识学习32——精灵图." title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A032%E2%80%94%E2%80%94%E7%B2%BE%E7%81%B5%E5%9B%BE..html#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A032%E2%80%94%E2%80%94%E7%B2%BE%E7%81%B5%E5%9B%BE..html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="1：为什么需要精灵图技术？"><a href="#1：为什么需要精灵图技术？" class="headerlink" title="1：为什么需要精灵图技术？"></a>1：为什么需要精灵图技术？</h2><p>当网页中的图像，过多的时候，服务器就会频繁的接收和发送请求图片，造成服务器请求压力过大，大大降低页面的加载速度。为了有效的减少服务器发送请求和接收的次数，提高页面的加载速度，出现了CSS精灵技术。</p>
-<h2 id="2：精灵图的核心原理"><a href="#2：精灵图的核心原理" class="headerlink" title="2：精灵图的核心原理"></a>2：精灵图的核心原理</h2><p>将网页中的一些小的背景图片，整合到一张大图中，这样服务器只需要一次请求就可以了。</p>
-<h2 id="3-精灵技术的目的"><a href="#3-精灵技术的目的" class="headerlink" title="3: 精灵技术的目的"></a>3: 精灵技术的目的</h2><p>有效的减少服务器接收和发送请求的次数，提高页面的加载速度。</p>
-<h2 id="4：使用精灵图的注意事项"><a href="#4：使用精灵图的注意事项" class="headerlink" title="4：使用精灵图的注意事项"></a>4：使用精灵图的注意事项</h2><p><img src="https://jiapeiyang.oss-cn-beijing.aliyuncs.com/img/20201005113730.png" alt></p>
-<h2 id="5：精灵图核心总结"><a href="#5：精灵图核心总结" class="headerlink" title="5：精灵图核心总结"></a>5：精灵图核心总结</h2>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%AD%A6%E4%B9%A032%E2%80%94%E2%80%94%E7%B2%BE%E7%81%B5%E5%9B%BE..html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1200,7 +1203,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">123</span>
+          <span class="site-state-item-count">125</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1242,7 +1245,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
