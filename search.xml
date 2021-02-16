@@ -2730,8 +2730,15 @@ mycode\Scripts\activate</code></pre><h3 id="4-打开我们的VSCode，选择我�
       </tags>
   </entry>
   <entry>
-    <title>测试提交</title>
-    <url>/%E6%B5%8B%E8%AF%95%E6%8F%90%E4%BA%A4.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="仅作测试使用。"><a href="#仅作测试使用。" class="headerlink" title="仅作测试使用。"></a>仅作测试使用。</h2>]]></content>
+    <title>一台电脑绑定两个Github账号</title>
+    <url>/%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E7%BB%91%E5%AE%9A%E4%B8%A4%E4%B8%AAGithub%E8%B4%A6%E5%8F%B7.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="1：首先我们的PC已经绑定过一个账号了，也就意味这我们右id-rsa了。"><a href="#1：首先我们的PC已经绑定过一个账号了，也就意味这我们右id-rsa了。" class="headerlink" title="1：首先我们的PC已经绑定过一个账号了，也就意味这我们右id_rsa了。"></a>1：首先我们的PC已经绑定过一个账号了，也就意味这我们右id_rsa了。</h2><h2 id="2：生成新的公钥并命名为id-rsa-2"><a href="#2：生成新的公钥并命名为id-rsa-2" class="headerlink" title="2：生成新的公钥并命名为id_rsa_2"></a>2：生成新的公钥并命名为id_rsa_2</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -f ~&#x2F;.ssh&#x2F;id_rsa_2 -C &quot;yourmail@xxx.com&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="3：修改config配置"><a href="#3：修改config配置" class="headerlink" title="3：修改config配置"></a>3：修改config配置</h2><p><img src="https://img-blog.csdnimg.cn/img_convert/4ffa3ddaaca09adcf1cf074fa30ceeb0.png" alt=""></p>
+<h2 id="4：将指定公钥输入github"><a href="#4：将指定公钥输入github" class="headerlink" title="4：将指定公钥输入github"></a>4：将指定公钥输入github</h2><p>id_rsa_2.pub  指的是公钥</p>
+<h2 id="5：设置全局用户名和密码"><a href="#5：设置全局用户名和密码" class="headerlink" title="5：设置全局用户名和密码"></a>5：设置全局用户名和密码</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 取消全局 用户名&#x2F;邮箱 配置</span><br><span class="line">git config –global –unset user.name</span><br><span class="line">git config –global –unset user.email</span><br><span class="line"># 单独设置每个repo 用户名&#x2F;邮箱</span><br><span class="line">git config user.email “xxxx@xx.com”</span><br><span class="line">git config user.name “xxxx”</span><br></pre></td></tr></table></figure>
+<h2 id="6：链接远程仓库"><a href="#6：链接远程仓库" class="headerlink" title="6：链接远程仓库"></a>6：链接远程仓库</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote add origin ***</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>Git</tag>
+      </tags>
   </entry>
 </search>
